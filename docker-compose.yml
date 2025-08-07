@@ -1,0 +1,20 @@
+services:
+  mc:
+    image: dockerproxy.net/itzg/minecraft-server
+    tty: true
+    stdin_open: true
+    ports:
+      - "25565:25565"
+    environment:
+      EULA: "TRUE"
+      UID: 1001
+      GID: 1001
+      MEMORY: 10G
+      TZ: "Asia/Shanghai"
+      # game server settings
+      # see https://docker-minecraft-server.readthedocs.io/en/latest/configuration/server-properties/
+      ONLINE_MODE: false
+      DIFFICULTY: "hard"
+    volumes:
+      # attach the relative directory 'data' to the container's /data path
+      - ./data:/data
