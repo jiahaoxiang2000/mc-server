@@ -7,7 +7,7 @@ services:
       - "25565:25565"
     environment:
       TYPE: FORGE # or "SPIGOT", "BUNGEE", etc.
-      VERSION: "1.21.8" # specify the Minecraft version
+      VERSION: "1.20.1" # specify the Minecraft version
       EULA: "TRUE"
       UID: 1001
       GID: 1001
@@ -21,3 +21,4 @@ services:
       # attach the relative directory 'data' to the container's /data path
       - ./data:/data
       - ./mods:/data/mods
+      - ./config:/data/config
